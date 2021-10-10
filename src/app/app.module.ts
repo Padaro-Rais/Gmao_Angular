@@ -9,10 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { ConfirmationPopoverModule } from 'angular-confirmation-popover'
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { NotfoundComponent } from './notfound/notfound.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotfoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

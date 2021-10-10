@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr'
       </div>
       <div class="clr-col-9"></div>
     </div>
-    <br />
+    <br/>
 
     <form (ngSubmit)="createMaterial()" #registerForm="ngForm">
       <div class="row">
@@ -69,7 +69,7 @@ import { ToastrService } from 'ngx-toastr'
       <div class="row">
         <div class="col">
           <label class="form-label">
-            Garentie
+             Garantie
             <span class="requi">(*)</span>
           </label>
           <input
@@ -257,7 +257,7 @@ import { ToastrService } from 'ngx-toastr'
       <div class="col">
         <label class="form-label">
           Image
-          <span class="requi"></span>
+          <span class="requi">(*)</span>
         </label>
         <input
           type="file"

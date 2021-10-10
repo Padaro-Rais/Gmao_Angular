@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-update-material-categorie',
+  selector: 'app-notfound',
   template: `
-    <p>
-      update-material-categorie works!
+    <p >
+      Cette page n'existe pas !!!!
     </p>
   `,
   styles: [
+
   ]
 })
-export class UpdateMaterialCategorieComponent implements OnInit {
+export class NotfoundComponent implements OnInit {
 
   constructor() { }
 

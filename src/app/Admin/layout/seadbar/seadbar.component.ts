@@ -111,9 +111,10 @@ import { Component, OnInit } from '@angular/core'
           Prestataires
         </a>
 
-        <a routerLink="/app/users" routerLinkActive="active" class="nav-link">
+        <a *ngIf="permission"  routerLink="/app/users" routerLinkActive="active" class="nav-link">
           Utilisateurs
         </a>
+        
       </clr-vertical-nav-group-children>
     </clr-vertical-nav-group>
   `,
@@ -122,5 +123,14 @@ import { Component, OnInit } from '@angular/core'
 export class SeadbarComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  permission: boolean = false
+
+
+
+  ngOnInit(): void {
+
+    if( localStorage.getItem('permission') == '1'){
+          this.permission =true
+    }
+  }
 }

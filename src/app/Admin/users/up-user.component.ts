@@ -149,7 +149,7 @@ import { ToastrService } from 'ngx-toastr';
             placeholder=""
             #email="ngModel"
             [(ngModel)]="users.email"
-            required maxlength="20"
+            required 
             [ngClass]="{'is-invalid': email.touched && !email.valid}"
           />
           <div class="invalid-feedback"><span *ngIf="email.errors">ce champs est requis</span></div>

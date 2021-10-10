@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr'
       </div>
       <div class="clr-col-9"></div>
     </div>
-    <br />
+    <br/>
 
     <form novalidate [formGroup]="formGroup" (ngSubmit)="createContract()">
       <div class="row">

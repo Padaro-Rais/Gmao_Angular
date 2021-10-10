@@ -9,7 +9,7 @@ import { AuthServivesService } from './auth-servives.service'
     <div class="login-wrapper">
       <form class="login" [formGroup]="formGroup" (ngSubmit)="LoginProcess()">
         <section class="title">
-          <h3 class="welcome">Bienvenu sur LGMAO</h3>
+          <h3 class="welcome"><b>Bienvenue sur LGMAO</b></h3>
           <p>Gestion de maintenance assistée par ordinateur</p>
         </section>
         <div class="login-group">
@@ -26,7 +26,7 @@ import { AuthServivesService } from './auth-servives.service'
             <input
                class="form-control form-control-sm"
               type="password"
-              placeholder="Password"
+              placeholder="mot de passe"
               formControlName="password"
             />
           <!-- <clr-checkbox-wrapper> -->
@@ -49,9 +49,6 @@ import { AuthServivesService } from './auth-servives.service'
             S'authentifier
           </button>
 
-          <a href="javascript://" class="signup">
-            connecter vous avec les identifiants de votre compagnie
-          </a>
         </div>
       </form>
     </div>
@@ -91,7 +88,10 @@ export class LoginComponent implements OnInit {
       this.AuthService.login(this.formGroup.value).subscribe(
         (res) => {
           ;(this.data = res), localStorage.setItem('token', this.data.token)
-          console.log(localStorage.getItem('token'))
+
+          localStorage.setItem('permission', this.data.user.role_id)
+
+          console.log(this.data.user.role_id)
           this.iscon = true
 
           this.router.navigateByUrl('/app/dashbord')

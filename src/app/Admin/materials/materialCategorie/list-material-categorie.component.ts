@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr'
   selector: 'app-list-material-categorie',
   template: `
     <h6 id="titre1">Configuration</h6>
-    <h2 id="titre"><b>CATEGOEIE MATERIELS</b></h2>
+    <h2 id="titre"><b>CATEGORIE MATERIELS</b></h2>
     <div class="clr-row" id="baniere">
       <div class="clr-col-3">
         <h3><b>Nouvelle entrée</b></h3>

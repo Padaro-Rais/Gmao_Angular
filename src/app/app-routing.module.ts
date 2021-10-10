@@ -1,34 +1,10 @@
 import { ListUsersComponent } from './Admin/users/list-users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddUsersComponent } from './Admin/users/add-users.component';
-import { DetailsUsersComponent } from './Admin/users/details-users.component';
 
-import { ListMaterialGroupComponent } from './Admin/materials/materialGroup/list-material-group.component';
-import { ListMaterialCategorieComponent } from './Admin/materials/materialCategorie/list-material-categorie.component';
-import { ListMaterialLocationComponent } from './Admin/materials/materialLocation/list-material-location.component';
-import { ListMaterialProviderComponent } from './Admin/materials/materialProvider/list-material-provider.component';
-import { ListMaterialComponent } from './Admin/materials/list-material.component';
-import { ListContractComponent } from './Admin/Contracts/list-contract.component';
-import { ListTaskComponent } from './Admin/tasks/list-task.component';
-
-import { AddContractComponent } from './Admin/Contracts/add-contract.component';
-import { AddMaterialCategorieComponent } from './Admin/materials/materialCategorie/add-material-categorie.component';
-import { AddMaterialGroupComponent } from './Admin/materials/materialGroup/add-material-group.component';
-import { AddMaterialLocationComponent } from './Admin/materials/materialLocation/add-material-location.component';
-import { AddMaterialProviderComponent } from './Admin/materials/materialProvider/add-material-provider.component';
-import { AddMaterialComponent } from './Admin/materials/add-material.component';
-import { AddTaskComponent } from './Admin/tasks/add-task.component';
-
-import { HomeComponent } from './Admin/home/home.component';
-import { DetailsTaskComponent } from './Admin/tasks/details-task.component';
-import { DashbordComponent } from './Admin/home/dashbord/dashbord.component';
 import { AuthGuard } from './auth/auth.guard';
-import { UpdateUsersComponent } from './Admin/users/update-users.component';
-import { UpUserComponent } from './Admin/users/up-user.component';
-import { ConsultationComponent } from './Admin/materials/consultation/consultation.component';
-import { UpdateMaterialLocationComponent } from './Admin/materials/materialLocation/update-material-location.component';
-import { UpdateContractComponent } from './Admin/Contracts/update-contract.component';
+
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -48,6 +24,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('src/app/Admin/admin.module').then((m) => m.AdminModule),
       canActivate: [AuthGuard],
+  },
+
+  {
+    path: '**',
+    component: NotfoundComponent,
   },
 
   // { path: 'login', component: LoginComponent },

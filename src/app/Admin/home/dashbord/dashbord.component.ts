@@ -76,6 +76,8 @@ import { Component, OnInit } from '@angular/core'
       </div>
     </div>
 
+    <br>  <br>  <br>
+
     <div class="clr-row">
       <div class="clr-col">
         <div class="clr-row">
@@ -140,9 +142,12 @@ import { Component, OnInit } from '@angular/core'
         </div>
       </div>
     </div>
+    <br>
+    <br>  <br>
+
 
     <div class="clr-row">
-      <div class="clr-col">
+      <div class="clr-col" *ngIf="permission">
         <div class="card">
           <div class="card-header">UTILISATEURS</div>
           <div class="card-block">
@@ -199,5 +204,12 @@ import { Component, OnInit } from '@angular/core'
 export class DashbordComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  permission : boolean = false
+
+  ngOnInit(): void {
+
+    if( localStorage.getItem('permission') == '1'){
+      this.permission =true
+    }
+  }
 }

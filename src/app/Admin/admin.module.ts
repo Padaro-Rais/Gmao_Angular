@@ -21,13 +21,11 @@ import { UpdateMaterialLocationComponent } from './materials/materialLocation/up
 import { ListMaterialProviderComponent } from './materials/materialProvider/list-material-provider.component'
 import { AddMaterialComponent } from './materials/add-material.component'
 import { ListMaterialComponent } from './materials/list-material.component'
-import { ConsultationComponent } from './materials/consultation/consultation.component'
 import { AddContractComponent } from './Contracts/add-contract.component'
 import { ListContractComponent } from './Contracts/list-contract.component'
 import { UpdateContractComponent } from './Contracts/update-contract.component'
 import { AddTaskComponent } from './tasks/add-task.component'
 import { ListTaskComponent } from './tasks/list-task.component'
-import { DetailsTaskComponent } from './tasks/details-task.component'
 import { UpdateTaskComponent } from './tasks/update-task.component'
 import { UpdateUsersComponent } from './users/update-users.component'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
@@ -59,7 +57,6 @@ export const AdminRoute: Routes = [
 
       { path: 'add-Material', component: AddMaterialComponent },
       { path: 'materials', component: ListMaterialComponent },
-      { path: 'consultation', component: ConsultationComponent },
 
       { path: 'add-Contract', component: AddContractComponent },
       { path: 'contracts', component: ListContractComponent },
@@ -67,7 +64,6 @@ export const AdminRoute: Routes = [
 
       { path: 'add-Task/:id', component: AddTaskComponent },
       { path: 'tasks', component: ListTaskComponent },
-      { path: 'details-task/:id', component: DetailsTaskComponent },
     ],
   },
 ]
@@ -90,7 +86,6 @@ export const AdminRoute: Routes = [
     ListMaterialComponent,
     AddMaterialComponent,
     ListTaskComponent,
-    DetailsTaskComponent,
     AddTaskComponent,
     UpdateTaskComponent,
     ListContractComponent,
@@ -98,7 +93,6 @@ export const AdminRoute: Routes = [
     UpdateContractComponent,
     HomeComponent,
     UpUserComponent,
-    ConsultationComponent,
   ],
   imports: [
     CommonModule,

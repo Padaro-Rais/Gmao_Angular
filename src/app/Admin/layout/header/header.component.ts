@@ -22,13 +22,14 @@ import { Router } from '@angular/router'
       </div>
 
       <div class="header-actions">
-        <a (click)="logout()" class="nav-link nav-text">
-          se déconnecter
-        </a>
+         <button type="button" (click)="logout()" id="sd" class="btn btn-primary btn-sm">Se déconnecter</button>
       </div>
     </header>
   `,
-  styles: [],
+  styles: [
+
+
+  ],
 })
 export class HeaderComponent implements OnInit {
   constructor(private route: Router) {}
