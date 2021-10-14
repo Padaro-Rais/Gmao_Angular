@@ -10,6 +10,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth.component';
+import { TestLoginComponent } from './test-login/test-login.component';
 
 
 export const AuthRoute: Routes = [
@@ -18,8 +19,12 @@ export const AuthRoute: Routes = [
     component: AuthComponent,
     children: [
       {
-        path: 'login',
+        path: 'test',
         component: LoginComponent,
+      },
+      {
+        path: 'login',
+        component: TestLoginComponent,
       },
     ],
   },
@@ -29,7 +34,7 @@ export const AuthRoute: Routes = [
 
 
 @NgModule({
-  declarations: [LoginComponent,AuthComponent],
+  declarations: [LoginComponent,AuthComponent, TestLoginComponent],
   imports: [CommonModule,
     RouterModule.forChild(AuthRoute),
     ClarityModule,

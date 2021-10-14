@@ -8,16 +8,16 @@ import { Router } from '@angular/router'
       <div class="branding">
         <a href="..." class="nav-link">
           <!-- <clr-icon shape="my-custom-shape"></clr-icon> -->
-          <span class="title">LGMAO</span>
+          <span class="title" id="app">LGMAO</span>
         </a>
       </div>
       <div class="header-nav">
         <a
-          routerLink="/dashbord"
+          routerLink="/app/dashbord"
           routerLinkActive="active"
           class="nav-link nav-text"
         >
-          TABLEAU DE BORD
+        <span id="bord">TABLEAU DE BORD</span>
         </a>
       </div>
 

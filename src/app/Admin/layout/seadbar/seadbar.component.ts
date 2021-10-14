@@ -10,62 +10,56 @@ import { Component, OnInit } from '@angular/core'
       routerLink="/app/statistiques"
     >
       <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
-      STATISTIQUES
+      <span class="sib_items">STATISTIQUES</span>
     </a>
 
     <clr-vertical-nav-group routerLinkActive="active">
       <clr-icon shape="tools" clrVerticalNavIcon></clr-icon>
-      MATERIELS
+      <span class="sib_items">MATERIELS</span>
       <clr-vertical-nav-group-children>
         <a
           clrVerticalNavLink
           routerLink="/app/materials"
           routerLinkActive="active"
         >
-          Liste des Materiels
+        <span class="sib_item"> Liste des Materiels</span>
         </a>
         <a
           clrVerticalNavLink
           routerLink="/app/add-Material"
           routerLinkActive="active"
         >
-          Nouveau Materiel
+        <span class="sib_item">Nouveau Materiel</span>
         </a>
-        <!-- <a
-            clrVerticalNavLink
-            routerLink="/app/consultation"
-            routerLinkActive="active"
-          >
-            Consultation
-          </a> -->
+
       </clr-vertical-nav-group-children>
     </clr-vertical-nav-group>
     <clr-vertical-nav-group routerLinkActive="active">
       <clr-icon shape="note" clrVerticalNavIcon></clr-icon>
-      CONTRATS
+      <span class="sib_items">CONTRATS</span>
       <clr-vertical-nav-group-children>
         <a
           clrVerticalNavLink
           routerLink="/app/contracts"
           routerLinkActive="active"
         >
-          Liste des contrats
+        <span class="sib_item"> Liste des contrats</span>
         </a>
         <a
           clrVerticalNavLink
           routerLink="/app/add-Contract"
           routerLinkActive="active"
         >
-          Nouveau contrat
+        <span class="sib_item"> Nouveau contrat</span>
         </a>
       </clr-vertical-nav-group-children>
     </clr-vertical-nav-group>
     <clr-vertical-nav-group routerLinkActive="active">
       <clr-icon shape="tasks" clrVerticalNavIcon></clr-icon>
-      TACHES
+      <span class="sib_items">TACHES</span>
       <clr-vertical-nav-group-children>
         <a clrVerticalNavLink routerLink="/app/tasks" routerLinkActive="active">
-          Liste des taches
+        <span class="sib_item"> Liste des taches </span>
         </a>
         <!-- <a
             clrVerticalNavLink
@@ -77,30 +71,31 @@ import { Component, OnInit } from '@angular/core'
       </clr-vertical-nav-group-children>
     </clr-vertical-nav-group>
     <clr-vertical-nav-group routerLinkActive="active">
-      <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
-      CONFIGURATIONS
+      <clr-icon shape="cog" clrVerticalNavIcon></clr-icon>
+      <span class="sib_items">CONFIGURATIONS</span>
       <clr-vertical-nav-group-children>
+
         <a
           routerLink="/app/materialGroupe"
           routerLinkActive="active"
           clrVerticalNavLink
         >
-          Groupes materiels
+        <span class="sib_item"> Groupes materiels</span>
         </a>
         <a
           routerLink="/app/materialCategorie"
           routerLinkActive="active"
           clrVerticalNavLink
         >
-          Catégories Materiels
+        <span class="sib_item"> Catégories Materiels</span>
         </a>
 
         <a
-          routerLink="/app/materialLocation"
+          routerLink="/app/companies"
           routerLinkActive="active"
           clrVerticalNavLink
         >
-          Localisation Materiels
+        <span class="sib_item">Localisation Materiels</span>
         </a>
 
         <a
@@ -108,13 +103,14 @@ import { Component, OnInit } from '@angular/core'
           routerLinkActive="active"
           clrVerticalNavLink
         >
-          Prestataires
+        <span class="sib_item">Prestataires</span>
         </a>
 
         <a *ngIf="permission"  routerLink="/app/users" routerLinkActive="active" class="nav-link">
-          Utilisateurs
+        <span class="sib_item">Utilisateurs</span>
         </a>
-        
+
+
       </clr-vertical-nav-group-children>
     </clr-vertical-nav-group>
   `,

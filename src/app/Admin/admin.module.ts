@@ -15,9 +15,7 @@ import { ListUsersComponent } from './users/list-users.component'
 import { UpUserComponent } from './users/up-user.component'
 import { ListMaterialGroupComponent } from './materials/materialGroup/list-material-group.component'
 import { ListMaterialCategorieComponent } from './materials/materialCategorie/list-material-categorie.component'
-import { AddMaterialLocationComponent } from './materials/materialLocation/add-material-location.component'
 import { ListMaterialLocationComponent } from './materials/materialLocation/list-material-location.component'
-import { UpdateMaterialLocationComponent } from './materials/materialLocation/update-material-location.component'
 import { ListMaterialProviderComponent } from './materials/materialProvider/list-material-provider.component'
 import { AddMaterialComponent } from './materials/add-material.component'
 import { ListMaterialComponent } from './materials/list-material.component'
@@ -29,7 +27,10 @@ import { ListTaskComponent } from './tasks/list-task.component'
 import { UpdateTaskComponent } from './tasks/update-task.component'
 import { UpdateUsersComponent } from './users/update-users.component'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompanyComponent } from './materials/materialLocation/company/company.component';
+import { AgencyComponent } from './materials/materialLocation/agency/agency.component';
+import { LocalComponent } from './materials/materialLocation/local/local.component';
 
 export const AdminRoute: Routes = [
   {
@@ -46,12 +47,17 @@ export const AdminRoute: Routes = [
       { path: 'materialGroupe', component: ListMaterialGroupComponent },
       { path: 'materialCategorie', component: ListMaterialCategorieComponent },
 
-      { path: 'add-Location', component: AddMaterialLocationComponent },
       { path: 'materialLocation', component: ListMaterialLocationComponent },
-      {
-        path: 'update-location/:id',
-        component: UpdateMaterialLocationComponent,
-      },
+
+
+
+
+      { path: 'companies', component: CompanyComponent },
+      { path: 'agencies', component: AgencyComponent },
+      { path: 'locals', component: LocalComponent },
+
+
+
 
       { path: 'materialProvider', component: ListMaterialProviderComponent },
 
@@ -80,19 +86,21 @@ export const AdminRoute: Routes = [
     ListMaterialCategorieComponent,
     ListMaterialGroupComponent,
     ListMaterialLocationComponent,
-    AddMaterialLocationComponent,
-    UpdateMaterialLocationComponent,
     ListMaterialProviderComponent,
     ListMaterialComponent,
     AddMaterialComponent,
     ListTaskComponent,
     AddTaskComponent,
+    
     UpdateTaskComponent,
     ListContractComponent,
     AddContractComponent,
     UpdateContractComponent,
     HomeComponent,
     UpUserComponent,
+    CompanyComponent,
+    AgencyComponent,
+    LocalComponent,
   ],
   imports: [
     CommonModule,

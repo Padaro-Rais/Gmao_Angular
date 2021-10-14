@@ -1,0 +1,57 @@
+<div class="login-wrapper">
+  <div class="login-overlay">
+    <form
+      class="login clr-form"
+      [formGroup]="formGroup"
+      (ngSubmit)="LoginProcess()"
+    >
+      <div class="login-group">
+        <div class="title">
+          <div class="login-logo">
+            <!-- <img [src]="elewouLogo" alt="ELEWOU" /> -->
+            <img alt="LGMAO" />
+          </div>
+          <span class="module-name">Gestion de maintenance</span>
+          <h5 class="hint" [translate]="'login.loginSubText'"></h5>
+        </div>
+        <div class="form form-container">
+          <ng-container>
+            <label class="clr-sr-only">Email</label>
+            <input
+              class="form-control form-control-sm"
+              type="email"
+              clrInput
+              placeholder="Email"
+              formControlName="email"
+            />
+
+            <label class="clr-sr-only">Password</label>
+            <input
+              class="form-control form-control-sm"
+              type="password"
+              placeholder="mot de passe"
+              formControlName="password"
+            />
+          </ng-container>
+          <button type="submit" *ngIf="hideBtn" class="btn btn-primary btn-block">
+            S'authentifier
+            <clr-icon shape="login"></clr-icon>
+          </button>
+
+          <button
+            type="submit"
+            *ngIf="showBtn"
+            class="btn btn-primary btn-block"
+            disabled
+          >
+            S'authentifier
+            <clr-icon shape="login"></clr-icon>
+          </button>
+        </div>
+        <div class="app-login-footer">
+          <div class="app-login-logo-description">Powered by LIKSOFT</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

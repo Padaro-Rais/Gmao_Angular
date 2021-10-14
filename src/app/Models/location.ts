@@ -1,8 +1,6 @@
 export class Location {
-  pays :any;
-  ville?:string;
-  quartier?:string;
+  id: any;
+  local_code :any;
+  code:any;
   location_label?:string;
-  physical_address?:string;
-  ref?:string;
 }

@@ -53,8 +53,11 @@ import { AuthServivesService } from './auth-servives.service'
       </form>
     </div>
   `,
-  styles: [],
+  styles: [
+
+  ],
 })
+
 export class LoginComponent implements OnInit {
   title = 'LGMAO'
   formGroup: any

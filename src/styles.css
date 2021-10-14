@@ -10,7 +10,7 @@
 }
 
 #sd{
-  background-color: #17507e
+  background-color: #1b4f72
 }
 
 #titre1{
@@ -21,6 +21,17 @@
   color: red
 }
 
+.sib_items{
+  font-weight:bold;
+  font-size: 120%;
+}
+
+.sib_item{
+  font-size: 130%;
+}
+
+
+
 #home{
   padding-top:20px;
   padding-right:20px;
@@ -28,7 +39,20 @@
 }
 
 #header{
-  background-color: #175d95;
+  background-color:    #1b4f72
+  ;
+}
+
+#bord{
+  color: white;
+  font-weight:bold;
+  font-size: 50;
+}
+
+#app{
+  color: white;
+  font-weight:bold;
+  font-size: 150%;
 }
 
 

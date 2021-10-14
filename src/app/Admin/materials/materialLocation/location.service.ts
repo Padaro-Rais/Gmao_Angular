@@ -34,4 +34,11 @@ export class LocationService {
   }
 
 
+
+  getlocal(){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.get(`${baseUrl}/locals`,config);
+  }
+
+
 }
