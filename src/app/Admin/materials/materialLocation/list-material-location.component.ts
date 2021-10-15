@@ -25,19 +25,10 @@ import { Location } from 'src/app/Models/location'
         <form [formGroup]="formValue">
           <div class="clr-row">
             <div class="clr-col-sm-12 clr-col-md-12">
-              <div *ngIf="code">
-                <label>
-                  Reference
-                  <span class="requi">(*)</span>
-                </label>
-                <input
-                  class="form-control form-control-sm"
-                  formControlName="code"
-                />
-                <br />
-              </div>
+              <div>
 
-              <div *ngIf="local">
+
+
               <label class="form-label">
                 local
                 <span class="requi">(*)</span>
@@ -46,6 +37,7 @@ import { Location } from 'src/app/Models/location'
                 class="form-select form-select-sm"
                 aria-label="Default select example"
                 formControlName="local_code"
+                required
               >
                 <option *ngFor="let local of locals" value="{{ local.code }}">
                   {{ local.code }}
@@ -175,6 +167,13 @@ export class ListMaterialLocationComponent implements OnInit {
       local_code: [''],
       code:['']
     })
+
+    this.service.getlocal().subscribe((res) => {
+      this.data = res
+      this.locals = this.data.items
+      console.log(this.locals)
+    })
+
     this.getData()
   }
 
@@ -185,11 +184,6 @@ export class ListMaterialLocationComponent implements OnInit {
       console.log(this.locations)
     })
 
-    this.service.getlocal().subscribe((res) => {
-      this.data = res
-      this.locals = this.data.items
-      console.log(this.locals)
-    })
   }
 
   deleteData(_id: any) {
@@ -216,22 +210,23 @@ export class ListMaterialLocationComponent implements OnInit {
 
     this.location.id = row.id
     this.formValue.controls['location_label'].setValue(row.location_label)
-    this.formValue.controls['code'].setValue(row.code)
+    this.formValue.controls['local_code'].setValue(row.local_code)
   }
 
   UpdateData() {
     this.alert = false
     this.location.location_label = this.formValue.value.location_label
-    this.location.code = this.formValue.value.code
-
+    this.location.local_code = this.formValue.value.local_code
+    this.location.code = this.formValue.value.local_code +'>'+ this.formValue.value.location_label
     this.service.updateData(this.location.id, this.location).subscribe(
       (res) => {
         this.showAdd = true
         this.showUp = false
         this.cansel = false
         this.toastr.success('modification reussi !')
-        this.formValue.reset()
         this.getData()
+        this.formValue.reset()
+        this.formValue.reset()
       },
       (err) => {
         this.toastr.error('une erreur produite !', 'veuillez réessayer')

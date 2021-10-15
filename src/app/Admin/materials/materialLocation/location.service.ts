@@ -34,11 +34,41 @@ export class LocationService {
   }
 
 
+  Createlocals(data:any){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.post(`${baseUrl}/locals`,data,config);
+  }
 
   getlocal(){
     const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
     return this.httpClient.get(`${baseUrl}/locals`,config);
   }
+
+  updatelocal(id:any, data:any){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.put(`${baseUrl}/locals/`+id,data,config);
+  }
+
+
+
+
+
+  CreateAgencies(data:any){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.post(`${baseUrl}/agencies`,data,config);
+  }
+
+  getAgencies(){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.get(`${baseUrl}/agencies`,config);
+  }
+
+  updateAgencie(id:any, data:any){
+    const config = { headers: {Authorization: "Bearer "+localStorage.getItem('token')} };
+    return this.httpClient.put(`${baseUrl}/agencies/`+id,data,config);
+  }
+
+
 
 
 }

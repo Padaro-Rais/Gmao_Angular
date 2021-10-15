@@ -1,1 +1,111 @@
-<p>agency works!</p>
+<h6 id="titre1">Configuration addresse matereils</h6>
+    <h2 id="titre">AGENCES</h2>
+    <div class="clr-row" id="baniere">
+      <div class="clr-col-3">
+        <h3><b>Nouvelle entrée</b></h3>
+      </div>
+      <div class="clr-col-9">
+        <h3><b>Données disponibles</b></h3>
+      </div>
+    </div>
+    <br />
+
+    <div class="clr-row">
+      <div class="clr-col-3">
+        <form [formGroup]="formValue">
+          <div class="clr-row">
+            <div class="clr-col-sm-12 clr-col-md-12">
+              <label>
+                libellé
+                <span class="requi">(*)</span>
+              </label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="nom"
+                required
+              />
+
+              <label>
+                ville
+              </label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="ville"
+              />
+
+              <label>
+                pays
+              </label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="pays"
+              />
+
+              <button
+                *ngIf="showAdd"
+                class="btn btn-primary"
+                type="submit"
+                (click)="CreateAgency()"
+                [disabled]="!formValue.valid"
+              >
+                Sauvegarder
+              </button>
+              <button
+                *ngIf="showUp"
+                class="btn btn-primary"
+                type="submit"
+                (click)="UpdateData()"
+                [disabled]="!formValue.valid"
+              >
+                Modifier
+              </button>
+
+              <button
+                *ngIf="cansel"
+                class="btn btn-primary"
+                type="submit"
+                (click)="Cansel()"
+              >
+                anuller
+              </button>
+            </div>
+          </div>
+          <br />
+        </form>
+      </div>
+      <div class="clr-col-9">
+        <clr-datagrid>
+          <clr-dg-column [clrDgField]="'code'">reference</clr-dg-column>
+          <clr-dg-column [clrDgField]="'nom'">Libelle</clr-dg-column>
+          <clr-dg-column [clrDgField]="'ville'">Ville</clr-dg-column>
+          <clr-dg-column [clrDgField]="'pays'">Pays</clr-dg-column>
+
+
+          <clr-dg-row *clrDgItems="let agencie of agencies">
+            <clr-dg-action-overflow>
+              <a (click)="Edite(agencie)">
+                <button class="action-item">Modifier</button>
+              </a>
+              <a (click)="deleteData(agencie.code)">
+                <button class="action-item">Supprimer</button>
+              </a>
+            </clr-dg-action-overflow>
+            <clr-dg-cell>{{ agencie.code }}</clr-dg-cell>
+            <clr-dg-cell>{{ agencie.nom }}</clr-dg-cell>
+            <clr-dg-cell>{{ agencie.ville }}</clr-dg-cell>
+            <clr-dg-cell>{{ agencie.pays }}</clr-dg-cell>
+
+          </clr-dg-row>
+
+          <clr-dg-footer>
+            <clr-dg-pagination #pagination [clrDgPageSize]="10">
+              <clr-dg-page-size [clrPageSizeOptions]="[10, 20, 50, 100]">
+                Groupes par page
+              </clr-dg-page-size>
+              {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} ..
+              {{ pagination.totalItems }} Groupes
+            </clr-dg-pagination>
+          </clr-dg-footer>
+        </clr-datagrid>
+      </div>
+    </div>

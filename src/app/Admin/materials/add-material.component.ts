@@ -217,7 +217,7 @@ import { ToastrService } from 'ngx-toastr'
               *ngFor="let location of locations"
               value="{{ location.id }}"
             >
-              {{ location.ref }}
+              {{ location.code }}
             </option>
           </select>
           <div class="invalid-feedback">
